@@ -71,7 +71,7 @@ Originally conducted for my BSc (Hons) Geology dissertation at Cluster Universit
 
 ```text
 bari-brahmana-groundwater-hydrochemistry/
-├── 01_bari_brahmana_hydrochemistry.ipynb          # End-to-end Google Colab analysis notebook
+├── 01_bari_brahmana_hydrochemistry.ipynb          
 ├── outputs/
 │   ├── data/
 │   │   ├── bari_brahmana_groundwater_2023.csv     # Digitised & QA-verified primary dataset
