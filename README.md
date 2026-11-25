@@ -55,7 +55,8 @@ Originally conducted for my BSc (Hons) Geology dissertation at Cluster Universit
 * **Digitisation QA Fixes Logged in Code:** Two typographical printing errors from the original 2023 bound report Table 2 were audited and corrected during digitisation:
   1. Sample 10 (*Furniture Factory*) printed Iron (`Fe`) as `02` instead of `0.2 mg/L` (verified against the report's computed mean of `0.13 mg/L` and text range `0.1–0.2 mg/L`).
   2. The Chloride column header printed `Cr` instead of `Cl⁻` (confirmed by the analytical methods and `120–260 mg/L` Chloride section).
-* **WQI Weighting Scheme:** Computed using BIS IS 10500:2012 acceptable limits with standard health-priority weights (`w = 5` for `NO₃⁻`, `F⁻`; `w = 4` for `Fe`, `TDS`, `pH`; `w = 3` for `Cl⁻`, `Turbidity`, `Hardness`; `w = 2` for `Alkalinity`, `Ca²⁺`).
+* **Reproducible WQI Formulation:** Computed transparently in Cell 2 of `01_bari_brahmana_hydrochemistry.ipynb` (with site-wise outputs saved in `outputs/data/bari_brahmana_wqi_results.csv` and raw verified inputs in `outputs/data/bari_brahmana_groundwater_2023.csv`) using BIS IS 10500:2012 acceptable limits ($S_i$) and health-priority weights ($w_i = 5$ for $\text{NO}_3^-$, $\text{F}^-$; $4$ for $\text{Fe}$, $\text{TDS}$, $\text{pH}$; $3$ for $\text{Cl}^-$, Turbidity, Hardness; $2$ for Alkalinity, $\text{Ca}^{2+}$):
+  $$W_i = \frac{w_i}{\sum w_i}, \qquad q_i = \frac{C_i}{S_i} \times 100 \quad \left(\text{for pH: } q_{\text{pH}} = \frac{|\text{pH} - 7.0|}{8.5 - 7.0} \times 100\right), \qquad \text{WQI} = \sum W_i \cdot q_i$$
 
 ---
 
@@ -64,6 +65,7 @@ Originally conducted for my BSc (Hons) Geology dissertation at Cluster Universit
 * **Sample Size (`n = 10`):** With only 2 shallow hand pumps versus 8 deeper wells, Mann–Whitney U tests are strictly exploratory; expanded shallow-well sampling around Badhori and Patti is needed to delineate the plume boundary.
 * **Single-Season Snapshot:** Sampling occurred during the pre-monsoon period; post-monsoon resampling is required to quantify recharge dilution versus seasonal nitrate leaching.
 * **Geolocation Integrity:** Individual well GPS coordinates were not logged during the 2023 undergraduate survey; accordingly, no synthetic point map was fabricated.
+* **No Industrial Plume Delineation:** While shallow hand pumps exhibit clearly elevated nitrate and solute loads relative to deeper wells, the small sample size (`n = 10`) and absence of well-level GPS coordinates mean these observations represent **exploratory evidence of vertical aquifer vulnerability**, not a conclusively mapped industrial contamination plume.
 
 ---
 
